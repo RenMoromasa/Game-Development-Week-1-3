@@ -61,3 +61,10 @@ This update introduces a dynamic user interface for score tracking, immersive au
 
 ![Enemy Stomp Scene](screenshots/EnemyStomp.png)<br>
 *Figure 13: The Player stomping the enemy's Headbox to trigger the death animation and gain points.*
+
+
+![Audio SFX Scene](screenshots/Music1.png)<br>
+*Figure 14: SFX For Player.*
+
+![Background Music Scene](screenshots/Music2.png)<br>
+*Figure 15: Background music.*

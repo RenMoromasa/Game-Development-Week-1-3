@@ -19,6 +19,7 @@ This project demonstrates a basic 2D scene in Godot Engine featuring a "Hello Wo
 Gameplay Mechanics
 Subtopics: Handling input (keyboard/gamepad), physics bodies (rigid/kinematic), collision detection. Basics of player controllers (movement, jumping).
 
+## Screenshots
 ![Moving Scene](screenshots/moving.png)<br>
 *Figure 4: The scene for player moving.*
 
@@ -36,11 +37,10 @@ This project features two distinct levels of a side-scrolling runner, demonstrat
 ## Screenshots
 ![Level 1 Scene](screenshots/Level1.png)<br>
 *Figure 7: The Level 1.*
-*(Add a screenshot of Level 1 and Level 2 here!)*
 
 ![Level 2 Scene](screenshots/Level2.png)<br>
-(screenshots/Level2fade.png)<br>
-*Figure 8: The Level 2.*
+![Level 2 Scene](screenshots/Level2fade.png)<br>
+*Figure 8: The Level 2 and fade away for the Level 2 Text.*
 
 ![Tilemaps and Traps Scene](screenshots/Tilemaps.png)<br>
 ![Tilemaps and Traps Scene](screenshots/Traps.png)<br>

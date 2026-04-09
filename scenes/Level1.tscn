@@ -29,6 +29,9 @@ position = Vector2(28.000061, 442)
 [node name="CollisionShape2D" parent="Player" parent_id_path=PackedInt32Array(262883908) index="1" unique_id=556083709]
 position = Vector2(42, 474)
 
+[node name="SFXDeath" parent="Player" parent_id_path=PackedInt32Array(262883908) index="3" unique_id=105113652]
+volume_db = 22.065
+
 [node name="Label" type="Label" parent="." index="2" unique_id=2076285638]
 offset_left = 38.0
 offset_top = 39.0
@@ -61,3 +64,6 @@ position = Vector2(986, 492)
 [node name="LevelTransition" parent="." index="10" unique_id=34270797 instance=ExtResource("4_dwyiq")]
 position = Vector2(564, 176)
 next_level = ExtResource("3_dwyiq")
+
+[node name="MusicPlayer" parent="." index="12" unique_id=2039646060]
+volume_db = -10.301

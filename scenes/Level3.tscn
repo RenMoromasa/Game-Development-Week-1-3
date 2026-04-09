@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://d037al4qvvmef"]
+
+[ext_resource type="PackedScene" uid="uid://bmnrmcc4ofoby" path="res://scenes/world.tscn" id="1_m3x5m"]
+[ext_resource type="Script" uid="uid://3q8rh065ghvd" path="res://scripts/label.gd" id="2_xsxxn"]
+[ext_resource type="PackedScene" uid="uid://dogcs1hxlupir" path="res://scenes/enemy.tscn" id="3_uocrp"]
+
+[node name="World" unique_id=480826868 instance=ExtResource("1_m3x5m")]
+
+[node name="AnimatedSprite2D" parent="Player" parent_id_path=PackedInt32Array(262883908) index="0" unique_id=1734661531]
+position = Vector2(19.000061, 442)
+
+[node name="CollisionShape2D" parent="Player" parent_id_path=PackedInt32Array(262883908) index="1" unique_id=556083709]
+position = Vector2(29, 476)
+
+[node name="ScoreLabel" parent="HUD" parent_id_path=PackedInt32Array(435097360) index="0" unique_id=23955724]
+offset_left = 39.0
+offset_top = 89.0
+offset_right = 136.0
+offset_bottom = 134.0
+
+[node name="MusicPlayer" parent="." index="3" unique_id=2039646060]
+volume_db = -10.09
+
+[node name="Label" type="Label" parent="." index="4" unique_id=2062795333]
+offset_left = 39.0
+offset_top = 54.0
+offset_right = 93.0
+offset_bottom = 77.0
+text = "Level 3"
+script = ExtResource("2_xsxxn")
+
+[node name="Enemy" parent="." index="5" unique_id=1427590472 instance=ExtResource("3_uocrp")]
+position = Vector2(729.00006, 479)
+
+[node name="Enemy2" parent="." index="6" unique_id=696409222 instance=ExtResource("3_uocrp")]
+position = Vector2(619.00006, 480)

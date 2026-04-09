@@ -45,3 +45,19 @@ This project features two distinct levels of a side-scrolling runner, demonstrat
 ![Tilemaps and Traps Scene](screenshots/Tilemaps.png)<br>
 ![Tilemaps and Traps Scene](screenshots/Traps.png)<br>
 *Figure 9 & 10: Tilemaps and Traps.*
+
+# Week 3: Activities 1 & 2 - UI/UX, Audio, and Enemy AI
+
+## Gameplay Overview
+This update introduces a dynamic user interface for score tracking, immersive audio systems for actions and background music, and intelligent enemy entities utilizing Finite State Machines for patrolling and chasing mechanics. 
+
+## Screenshots
+![HUD Scene](screenshots/HUD.png)<br>
+*Figure 11: The CanvasLayer Score HUD tracking player points.*
+
+![Enemy Patrol Scene](screenshots/EnemyPatrol.png)<br>
+![Enemy Chase Scene](screenshots/EnemyChase.png)<br>
+*Figure 12: The Enemy transitioning from Patrolling to Chasing the player.*
+
+![Enemy Stomp Scene](screenshots/EnemyStomp.png)<br>
+*Figure 13: The Player stomping the enemy's Headbox to trigger the death animation and gain points.*

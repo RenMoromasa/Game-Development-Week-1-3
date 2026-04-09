@@ -4,7 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://ds58fhs2sc30h" path="res://assets/texture_16px 5.png" id="2_qfnet"]
 [ext_resource type="Script" uid="uid://dwsaqbgwwn2h4" path="res://scripts/player.gd" id="3_i7141"]
 [ext_resource type="Texture2D" uid="uid://dwyiqi61ygepv" path="res://assets/IDLE.png" id="4_4mrxx"]
+[ext_resource type="Texture2D" uid="uid://dnmxklosw017h" path="res://assets/HURT.png" id="4_e3hyu"]
 [ext_resource type="Texture2D" uid="uid://mgctgj1e0nho" path="res://assets/RUN.png" id="5_7r4gi"]
+[ext_resource type="AudioStream" uid="uid://c0kk0po7o28tb" path="res://assets/maro-jump-sound-effect_1.mp3" id="6_7r4gi"]
+[ext_resource type="AudioStream" uid="uid://jkcvh3fkhhox" path="res://assets/vine-boom.mp3" id="7_w7kh3"]
+[ext_resource type="Script" uid="uid://i3e2kdv5jsa0" path="res://scenes/hud.gd" id="8_e3hyu"]
+[ext_resource type="AudioStream" uid="uid://fy3lerrlr867" path="res://assets/runningfootsteps.mp3" id="8_w7kh3"]
+[ext_resource type="AudioStream" uid="uid://d2yglmv5gdnfe" path="res://assets/Color Your Night - Lotus Juice - Topic (128k).wav" id="9_q5onr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwbse"]
 size = Vector2(1150.75, 138)
@@ -22,6 +28,22 @@ texture = ExtResource("2_qfnet")
 
 [sub_resource type="TileSet" id="TileSet_gbfbk"]
 sources/0 = SubResource("TileSetAtlasSource_pkg7o")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5onr"]
+atlas = ExtResource("4_e3hyu")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhx03"]
+atlas = ExtResource("4_e3hyu")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8fc1"]
+atlas = ExtResource("4_e3hyu")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo05s"]
+atlas = ExtResource("4_e3hyu")
+region = Rect2(0, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pkg7o"]
 atlas = ExtResource("4_4mrxx")
@@ -131,6 +153,26 @@ region = Rect2(1440, 0, 96, 96)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_q5onr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhx03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8fc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo05s")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pkg7o")
 }, {
 "duration": 1.0,
@@ -218,8 +260,9 @@ animations = [{
 "speed": 11.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikiii"]
-size = Vector2(43.5, 72.875)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7r4gi"]
+radius = 20.0
+height = 80.0
 
 [node name="World" type="Node2D" unique_id=480826868]
 
@@ -246,9 +289,32 @@ script = ExtResource("3_i7141")
 position = Vector2(577.00006, 442.00003)
 scale = Vector2(2.0104167, 2.0885415)
 sprite_frames = SubResource("SpriteFrames_udxuc")
-animation = &"run"
-frame_progress = 0.08927195
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=556083709]
-position = Vector2(582, 474)
-shape = SubResource("RectangleShape2D_ikiii")
+position = Vector2(588, 475)
+shape = SubResource("CapsuleShape2D_7r4gi")
+
+[node name="SFXJump" type="AudioStreamPlayer2D" parent="Player" unique_id=2121988045]
+stream = ExtResource("6_7r4gi")
+
+[node name="SFXDeath" type="AudioStreamPlayer2D" parent="Player" unique_id=105113652]
+stream = ExtResource("7_w7kh3")
+
+[node name="SFXRunning" type="AudioStreamPlayer2D" parent="Player" unique_id=1987158202]
+stream = ExtResource("8_w7kh3")
+volume_db = 15.253
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=435097360 groups=["HUD"]]
+script = ExtResource("8_e3hyu")
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=23955724]
+offset_left = 34.0
+offset_top = 96.0
+offset_right = 106.0
+offset_bottom = 151.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2039646060]
+stream = ExtResource("9_q5onr")
+volume_db = -11.81
+autoplay = true
